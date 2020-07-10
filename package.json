@@ -25,7 +25,6 @@
         "url": "https://github.com/FlorisSteenkamp/big-float-benchmark/issues"
     },
     "dependencies": {
-        "@types/chart.js": "^2.9.22",
         "big-float-ts": "^1.0.0",
         "big.js": "^5.2.2",
         "bigfloat": "^0.1.1",
@@ -35,6 +34,7 @@
         "double-double": "^1.0.3"
     },
     "devDependencies": {
+        "@types/chart.js": "^2.9.22",
         "@types/big.js": "^4.0.5",
         "@types/node": "^14.0.22",
         "http-server": "^0.12.3",
