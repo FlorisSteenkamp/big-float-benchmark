@@ -1,3 +1,6 @@
 # Big float benchmarks
 
-Head over to [the site](https://github.com/FlorisSteenkamp/big-float-benchmark)
+Please head over to [the site](https://florissteenkamp.github.io/big-float-benchmark/)
+for details.
+
+![benchmark](assets/benchmark.png)
