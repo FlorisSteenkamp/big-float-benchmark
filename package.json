@@ -1,0 +1,52 @@
+{
+    "name": "numerical-benchmark",
+    "description": "Simple benchmark for various extended precision floating point libraries",
+    "version": "0.0.1",
+    "author": {
+        "name": "Floris Steenkamp"
+    },
+    "private": false,
+    "license": "MIT",
+    "main": "node/index",
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FlorisSteenkamp/big-float-benchmark.git"
+    },
+    "keywords": [
+        "benchmark",
+        "floating point",
+        "infinite precision",
+        "adaptive"
+    ],
+    "bugs": {
+        "url": "https://github.com/FlorisSteenkamp/big-float-benchmark/issues"
+    },
+    "dependencies": {
+        "@types/chart.js": "^2.9.22",
+        "big-float-ts": "^1.0.0",
+        "big.js": "^5.2.2",
+        "bigfloat": "^0.1.1",
+        "bignumber.js": "^9.0.0",
+        "chart.js": "^2.9.3",
+        "decimal.js": "^10.2.0",
+        "double-double": "^1.0.3"
+    },
+    "devDependencies": {
+        "@types/big.js": "^4.0.5",
+        "@types/node": "^14.0.22",
+        "http-server": "^0.12.3",
+        "rimraf": "^3.0.2",
+        "source-map-support": "^0.5.19",
+        "ts-loader": "^7.0.1",
+        "ts-node": "^8.10.2",
+        "typescript": "^3.9.6",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12"
+    },
+    "scripts": {
+        "build": "webpack"
+    }
+}

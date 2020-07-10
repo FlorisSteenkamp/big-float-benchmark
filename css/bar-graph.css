@@ -1,0 +1,50 @@
+/* 
+ * FROM https://github.com/jadeallencook/Bar-Graph
+ */
+
+/* bar graph */
+.graphs-bar-graph {
+    width: 100%;
+}
+  
+.graphs-bar-graph * {
+    box-sizing: border-box;
+    vertical-align: top;
+    font-size: 1em;
+}
+  
+.graph-count-container {
+    display: inline-block;
+    margin-top: 15px;
+}
+ 
+.graph-bar-container .graph-bar-step {
+    border-bottom: solid thin black;
+}
+  
+.graph-bar-container {
+    display: inline-block;
+}
+  
+.graph-bar-container .graph-the-bar {
+    margin: 0px auto;
+    width: 50%;
+}
+  
+.graph-bar-label-container .graph-label-spacer,
+.graph-bar-label-container .graph-bar-label {
+    display: inline-block;
+}
+  
+.graph-bar-label-container .graph-label-spacer {
+    width: 10%;
+}
+  
+.graph-bar-label-container .graph-bar-label {
+    text-align: center;
+}
+  
+.graph-count-container .graph-count-step {
+    text-align: right;
+    padding: 5px;
+}

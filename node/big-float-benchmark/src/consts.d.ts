@@ -1,0 +1,10 @@
+declare const width = 150;
+declare const height = 100;
+declare const reStart = -2;
+declare const reEnd = 1;
+declare const imStart = -1;
+declare const imEnd = 1;
+declare const reWidth: number;
+declare const imWidth: number;
+declare const maxIter = 72;
+export { width, height, reStart, reEnd, imStart, imEnd, maxIter, reWidth, imWidth };
