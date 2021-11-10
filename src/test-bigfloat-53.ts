@@ -1,9 +1,9 @@
 
 import { BigFloat53 } from 'bigfloat';
-import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts';
+import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts.js';
 
 
-function testBigfloat(image: number[][]): number[][] {
+function testBigfloat_53(image: number[][]): number[][] {
     for (let y=0; y<height; y++) {
         for (let x=0; x<width; x++) {
             // Convert pixel coordinate to complex number
@@ -38,4 +38,4 @@ function testBigfloat(image: number[][]): number[][] {
 }
 
 
-export { testBigfloat }
+export { testBigfloat_53 }

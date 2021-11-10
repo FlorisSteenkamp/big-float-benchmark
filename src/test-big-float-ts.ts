@@ -1,6 +1,5 @@
-
 import { operators } from 'big-float-ts';
-import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts';
+import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts.js';
 
 
 const { 

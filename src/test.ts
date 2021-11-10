@@ -1,20 +1,23 @@
-
-import { width, height } from './consts';
-import { testNative } from './test-native';
-import { testDoubleDouble } from './test-double-double';
-import { testBigfloat } from './test-bigfloat';
-import { testBigFloat } from './test-big-float-ts';
-import { testBignumberJs } from './test-bignumber-js';
-import { testBigJs } from './test-big-js';
-import { testDecimalJs } from './test-decimal-js';
+import { width, height } from './consts.js';
+import { testNative } from './test-native.js';
+import { testDoubleDouble } from './test-double-double.js';
+import { testBigfloat_32 } from './test-bigfloat-32.js';
+import { testBigfloat_53 } from './test-bigfloat-53.js';
+import { testBigFloat } from './test-big-float-ts.js';
+import { testBignumberJs } from './test-bignumber-js.js';
+import { testBigJs } from './test-big-js.js';
+import { testDecimalJs } from './test-decimal-js.js';
 import { Chart, ChartData } from 'chart.js';
+import { testDoubleDotJs } from './test-double.js.js';
 
 
 type Test = 
     | 'test-native'
     | 'test-double-double'
+    | 'test-double.js'    
     | 'test-big-float-ts'
-    | 'test-bigfloat'
+    | 'test-bigfloat-32'
+    | 'test-bigfloat-53'
     | 'test-bignumber.js'
     | 'test-decimal.js'
     | 'test-big.js';
@@ -23,8 +26,10 @@ type Test =
 const tests: { [key in Test]: { f: (image: number[][]) => number[][], timing?: number } } = {
     'test-native'        : { f: testNative },
     'test-double-double' : { f: testDoubleDouble },
+    'test-double.js'     : { f: testDoubleDotJs },    
     'test-big-float-ts'  : { f: testBigFloat },
-    'test-bigfloat'      : { f: testBigfloat },
+    'test-bigfloat-32'   : { f: testBigfloat_32 },
+    'test-bigfloat-53'   : { f: testBigfloat_53 },
     'test-bignumber.js'  : { f: testBignumberJs },
     'test-decimal.js'    : { f: testDecimalJs },
     'test-big.js'        : { f: testBigJs },
@@ -34,7 +39,7 @@ const tests: { [key in Test]: { f: (image: number[][]) => number[][], timing?: n
 function test(fStr: Test) {
     const f: (image: number[][]) => number[][] = tests[fStr].f;
 
-    let context = (document.getElementById('gc') as HTMLCanvasElement).getContext('2d');
+    let context = (document.getElementById('gc') as HTMLCanvasElement).getContext('2d')!;
     let img = context.getImageData(0, 0, width, height);
     let buf = img.data;
 
@@ -89,7 +94,7 @@ function test(fStr: Test) {
         context.putImageData(img, 0, 0);
 
         let debug$ = document.getElementById('debug') as HTMLTextAreaElement;
-        debug$.innerHTML = 'milli-seconds per frame: ' + tests[fStr].timing.toFixed(3);
+        debug$.innerHTML = 'milli-seconds per frame: ' + tests[fStr].timing!.toFixed(3);
     }
 }
 
@@ -97,14 +102,16 @@ function test(fStr: Test) {
 const fStrs: Test[] = [
     'test-native', 
     'test-double-double', 
+    'test-double.js',    
     'test-big-float-ts', 
-    'test-bigfloat', 
+    'test-bigfloat-32', 
+    'test-bigfloat-53', 
     'test-bignumber.js', 
     'test-big.js', 
     'test-decimal.js'
 ];
 
-document.getElementById('tests').onclick = function() {
+document.getElementById('tests')!.onclick = function() {
     for (let fStr of fStrs) { test(fStr); }
     drawBargraph();
 }
@@ -117,7 +124,7 @@ function objToArr<T>(obj: { [K in keyof T]: T[K] }) {
 
 function drawBargraph() {
     let objs = objToArr(tests);
-    const data = objs.map(o => o.timing);
+    const data = objs.map(o => o.timing!);
     const labels = Object.keys(tests).map(s => s.substr(5));
     const chartData: ChartData = {
         labels,
@@ -140,13 +147,15 @@ function drawBargraph() {
     };
 
     const canvas$ = document.getElementById('chart') as HTMLCanvasElement;
-    const ctx = canvas$.getContext('2d');
+    const ctx = canvas$.getContext('2d')!;
 
     const chart = new Chart(ctx, {
+        // @ts-ignore
         type: 'horizontalBar',
         data: chartData,
         options: {
             scales: {
+                // @ts-ignore
                 xAxes: [{
                     gridLines: {
                         offsetGridLines: true
@@ -158,7 +167,7 @@ function drawBargraph() {
 }
 
 
-fStrs.map(str => document.getElementById(str).onclick = () => test(str));
+fStrs.map(str => document.getElementById(str)!.onclick = () => test(str));
 
 
 test('test-double-double');

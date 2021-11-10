@@ -1,6 +1,6 @@
 
 import { Decimal } from 'decimal.js';
-import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts';
+import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts.js';
 
 
 function testDecimalJs(image: number[][]): number[][] {

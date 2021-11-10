@@ -55,9 +55,10 @@
 		<h2>Libraries</h2>
 		<ul style="columns: 3; list-style-position: inside;">
 			<li><a href="https://github.com/FlorisSteenkamp/double-double">double-double</a></li>
+			<li><a href="https://github.com/munrocket/double.js">double.js</a></li>
 			<li><a href="https://github.com/FlorisSteenkamp/big-float-ts">big-float-ts</a></li>
 			<li><a href="https://github.com/MikeMcl/decimal.js">decimal.js</a></li>
-			<li><a href="https://github.com/charto/bigfloat">bigfloat</a></li>
+			<li><a href="https://github.com/charto/bigfloat">bigfloat (32 & 53)</a></li>
 			<li><a href="https://github.com/MikeMcl/bignumber.js">bignumber.js</a></li>
 			<li><a href="https://github.com/MikeMcl/big.js">big.js</a></li>
 		</ul>
@@ -73,7 +74,7 @@
 			intermediate calculations (otherwise they would be very slow!).
 		</li>
 		<li>
-			All libraries, except bigfloat returns visually correct results.
+			All libraries, except bigfloat (53-bit) returns visually correct results.
 		</li>
 		<li>
 			Clicking a button to test the first time is likely a cold interpreted
@@ -93,12 +94,18 @@
 				<button id="test-double-double">
 					double-double
 				</button>
+				<button id="test-double.js">
+					double.js
+				</button>
 				<button id="test-big-float-ts">
 					big-float-ts
 				</button>
-				<button id="test-bigfloat">
-					bigfloat
-				</button>				
+				<button id="test-bigfloat-32">
+					bigfloat (32)
+				</button>
+				<button id="test-bigfloat-53">
+					bigfloat (53)
+				</button>
 				<button id="test-bignumber.js">
 					bignumber.js
 				</button>

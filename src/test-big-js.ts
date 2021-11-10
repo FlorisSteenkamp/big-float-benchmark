@@ -1,6 +1,6 @@
 
 import { Big } from 'big.js';
-import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts';
+import { width, height, reStart, imStart,maxIter, reWidth, imWidth } from './consts.js';
 
 
 function testBigJs(image: number[][]): number[][] {
