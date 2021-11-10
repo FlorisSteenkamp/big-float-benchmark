@@ -28,7 +28,7 @@
         "url": "https://github.com/FlorisSteenkamp/big-float-benchmark/issues"
     },
     "dependencies": {
-        "big-float-ts": "^3.0.0",
+        "big-float-ts": "^3.0.1",
         "big.js": "^6.1.1",
         "bigfloat": "^0.1.1",
         "bignumber.js": "^9.0.1",
